@@ -62,6 +62,9 @@ public class ReactScreenMonitor implements LifecycleEventListener {
     }
 
     private void registerWindowLayoutListener() {
+		if (getWindow() == null) {
+            return;
+        }
         getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(mWindowLayoutListener);
     }
 
